@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+    <script src="components.js"></script>
+  </head>
+  <body>
+    <a-scene id="scene">
+      <a-assets>
+        <a-asset-item id="nyan" src="nyan-cat.gltf"></a-asset-item>
+        <a-asset-item id="nyan-obj" src="nyan.obj"></a-asset-item>
+        <a-asset-item id="nyan-mtl" src="nyan.mtl"></a-asset-item>
+        <img id="rainbow" src="rainbow-flag.jpg" />
+        <img id="galaxy" src="galaxy.jpg" />
+        <img id="spiral" src="spiral1.jpg" />
+      </a-assets>
+      <a-sky src="#galaxy"></a-sky>
+      <a-entity obj-model="obj: #nyan-obj; mtl: #nyan-mtl" position="0 0 -1" dynamic-body scale=" 0.3 0.3 0.3"></a-entity>
+      <a-camera id="camera" wasd-controls-enabled="false" look foo>
+        <a-text id="score" scores value="0" position="0.4 0.5 -1" color="#fff"></a-text>
+      </a-camera>
+    </a-scene>
+    <script src="script.js"></script>
+  </body>
+</html>
